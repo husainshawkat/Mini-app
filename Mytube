@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTube - আমার প্রিয় গান</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #181818;
+            color: white;
+        }
+        .header {
+            background-color: #ff0000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .video-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #202020;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        .video-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .video {
+            width: 300px;
+            background: #303030;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .video:hover {
+            background-color: #404040;
+        }
+        .video img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .video-title {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">MyTube 🎵</div>
+
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe id="main-video" src="https://www.youtube.com/embed/_plZHJpjfZM?autoplay=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-list">
+        <div class="video" onclick="changeVideo('_plZHJpjfZM')">
+            <img src="https://img.youtube.com/vi/_plZHJpjfZM/0.jpg" alt="গান ১">
+            <div class="video-title">গান ১</div>
+        </div>
+        <div class="video" onclick="changeVideo('JVtKEX90SZ0')">
+            <img src="https://img.youtube.com/vi/JVtKEX90SZ0/0.jpg" alt="গান ২">
+            <div class="video-title">গান ২</div>
+        </div>
+        <div class="video" onclick="changeVideo('umsrQSA2iOM')">
+            <img src="https://img.youtube.com/vi/umsrQSA2iOM/0.jpg" alt="গান ৩">
+            <div class="video-title">গান ৩</div>
+        </div>
+    </div>
+
+    <script>
+        function changeVideo(videoId) {
+            document.getElementById("main-video").src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+        }
+    </script>
+
+</body>
+</html>
